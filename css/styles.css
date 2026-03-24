@@ -1,0 +1,134 @@
+/* =========================================
+VARIABLES Y CONFIGURACIÓN BASE
+   ========================================= */
+:root {
+    --primary: #4A90E2;    /* Azul Viaje */
+    --accent: #FF6B6B;     /* Naranja/Rojo Acción */
+    --success: #47D16E;    /* Verde Acierto */
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --text-color: #2D3436;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    /* Fondo dinámico con degradado viajero */
+    background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    overflow: hidden; /* Para evitar scroll si hay animaciones */
+}
+
+/* =========================================
+CONTENEDORES (GLASSMORPHISM)
+   ========================================= */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    width: 90%;
+    max-width: 450px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+/* =========================================
+TIPOGRAFÍA Y BOTONES
+   ========================================= */
+.main-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin: 2rem 0;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    background: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary);
+}
+
+.btn-primary, .btn-action {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn-primary:hover, .btn-action:hover {
+    background: #357ABD;
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* =========================================
+ÁREA DE JUEGO
+   ========================================= */
+.suitcase-icon {
+    font-size: 5rem;
+    margin: 1.5rem 0;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+#feedback-msg {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    min-height: 1.5rem;
+}
+
+/* =========================================
+ANIMACIONES
+   ========================================= */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-10px); }
+    40%, 80% { transform: translateX(10px); }
+}
+
+.error-shake {
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+    border-color: var(--accent) !important;
+}
+
+.success-bounce {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px var(--success));
+}

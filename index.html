@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Viaje Mágico | Juego de Lógica</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <main id="app-wrapper">
+        
+        <section id="setup-screen" class="active">
+            <div class="glass-card">
+                <h1 class="main-title">El Viaje Mágico ✈️</h1>
+                <p class="description">¿Lograrás descubrir la regla secreta del equipaje?</p>
+                
+                <div class="form-group">
+                    <label for="userName">¿Cómo te llamás, viajero?</label>
+                    <input type="text" id="userName" placeholder="Ingresá tu nombre..." autocomplete="off">
+                </div>
+                
+                <button id="btn-start" class="btn-primary">Comenzar Aventura</button>
+            </div>
+        </section>
+
+        <section id="game-screen" class="hidden">
+            <div class="glass-card">
+                <header class="game-header">
+                    <h2 id="greeting">¡Hola!</h2>
+                    <p id="instruction">Si te vas de vacaciones... ¿qué te llevarías?</p>
+                </header>
+
+                <div class="game-area">
+                    <div id="visual-suitcase" class="suitcase-icon">🧳</div>
+                    
+                    <div class="input-area">
+                        <input type="text" id="itemInput" placeholder="¿Qué vas a llevar?" autocomplete="off">
+                        <button id="btn-check" class="btn-action">Intentar guardar</button>
+                    </div>
+                </div>
+
+                <div id="feedback-display">
+                    <p id="feedback-msg"></p>
+                </div>
+
+                <footer class="game-footer">
+                    <button id="btn-reset" class="btn-link">Reiniciar juego</button>
+                </footer>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="js/logic.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
